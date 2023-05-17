@@ -1,0 +1,110 @@
+---
+title: "Introductory Data Science Course Project: Retrieving Data from an API and Conducting an EDA"
+author:
+  - name: Justin Post
+    affil: 1
+    email: jbpost2@ncsu.edu
+    main: true
+affiliation:
+  - num: 1
+    address: Department of Statistics, NC State University
+poster_height: "36in"
+poster_width: "47.25in"
+secondary_colour: "#CC0000"
+accent_colour: "#F2F2F2"
+main_findings:
+  - "Make **better posters** with RMarkdown + **posterdown**."
+  - '![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png){.main_pic}'
+logoleft_name: '![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/qr-code-black.png){.main-img-left}'
+logoright_name: '![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png){.main-img-right}'
+main_width: 0.5026455
+output: 
+  posterdown::posterdown_betterland:
+    self_contained: false
+    pandoc_args: --mathjax
+    highlight: haddock
+    number_sections: false
+link-citations: true
+bibliography: packages.bib
+---
+
+```{r, include=FALSE}
+#remotes::install_github("mitchelloharawild/icons")
+#knit: pagedown::chrome_print
+library(icons)
+knitr::opts_chunk$set(results = 'asis',
+                      echo = FALSE,
+                      warning = FALSE,
+                      tidy = FALSE,
+                      message = FALSE,
+                      fig.align = 'center',
+                      out.width = "100%")
+options(knitr.table.format = "html") 
+```
+
+
+# Purpose
+
+Creating meaningful projects in a data science course can be a time consuming task. The purpose of this beyond session is to provide example project instructions from a graduate level introductory data science course using the tidyverse that could be used to create a similar assessment for your class along with example student submissions. The purpose of the project is to give students practice writing coherent R functions to query an API (think online database), return the data in a usable format, and summarize the data in a meaningful way. The project discussed here requires the topics of: R Markdown, Function Writing, Data Manipulation, and Summarizing Data. Students should be familiar with the common steps of conducting an exploratory data analysis in R.
+
+# Project Requirements
+
+- `r knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/main/SVG/rmarkdown.svg",)`
+- `r icon_style(icons::academicons("osf"), scale = 2, fill = "#035AA6")`
+- `r icons::fontawesome("github")` (optional) 
+This is the `posterdown_betterland` template for the {posterdown} package! I was inspired by the twitter thread of [Mike Morrison](https://mobile.twitter.com/mikemorrison/status/1110191245035479041) and wanted to apply the `#betterposter` concept to the reproducible (yet simple to use) functionality of the {posterdown} package [@R-posterdown]. If you're not an R user don't sweat as you do **NOT** need to use it at all! Feel free to use only the Markdown functionality of this package :)
+
+```{r, include=FALSE}
+knitr::write_bib(c('posterdown', 'rmarkdown','pagedown'), 'packages.bib')
+```
+
+## Objectives
+
+1. Pick a template layout.
+2. Write/ create your poster content distraction free.
+3. Let posterdown do its thing!
+
+
+**_Now on to the results!_**
+
+<br>
+
+# Results
+
+Here you may have some figures to show off, bellow I have made a scatterplot with the infamous Iris dataset and I can even reference to the figure automatically like this, `Figure \@ref(fig:irisfigure)`, Figure \@ref(fig:irisfigure).
+
+```{r, irisfigure, fig.cap='Here is a caption for the figure. This can be added by using the "fig.cap" option in the r code chunk options, see this [link](https://yihui.name/knitr/options/#plots) from the legend himself, [Yihui Xie](https://twitter.com/xieyihui).', out.width="80%"}
+par(mar=c(2,2,0,1))
+plot(x = iris$Sepal.Length, y = iris$Sepal.Width,
+     col = iris$Species, pch = 19, xlab = "Sepal Length",
+     ylab = "Sepal Width")
+```
+
+Maybe you want to show off some of that fancy code you spent so much time on to make that figure, well you can do that too! Just use the `echo=TRUE` option in the r code chunk options, Figure \@ref(fig:myprettycode)!
+
+```{r myprettycode, echo=FALSE,collapse=TRUE, fig.cap='Boxplots, so hot right now!', fig.height=3.5, out.width="80%"}
+#trim whitespace
+par(mar=c(2,2,0,0))
+#plot boxplots
+boxplot(iris$Sepal.Width~iris$Species,
+        col = "#008080", 
+        border = "#0b4545",
+        ylab = "Sepal Width (cm)",
+        xlab = "Species")
+```
+
+How about a neat table of data? See, Table \@ref(tab:iristable):
+
+```{r, iristable}
+knitr::kable(
+  iris[1:8,1:5], format = "html",
+  caption = "A table made with the **knitr::kable** function.",
+  align = "c", col.names = c("Sepal <br> Length",
+                             "Sepal <br> Width",
+                             "Petal <br> Length",
+                             "Petal <br> Width",
+                             "Species"),
+  escape = FALSE)
+```
+
+# References
