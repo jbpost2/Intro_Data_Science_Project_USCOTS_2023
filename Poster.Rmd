@@ -7,16 +7,16 @@ author:
     main: true
 affiliation:
   - num: 1
-    address: Department of Statistics, NC State University
+    address: Department of Statistics, NC State University <br> jbpost2.github.io
 poster_height: "36in"
 poster_width: "47.25in"
-secondary_colour: "#CC0000"
-accent_colour: "#F2F2F2"
+secondary_colour: "#F2F2F2"
+primary_colour: "#CC0000"
 main_findings:
-  - "Make **better posters** with RMarkdown + **posterdown**."
-  - '![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png){.main_pic}'
-logoleft_name: '![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/qr-code-black.png){.main-img-left}'
-logoright_name: '![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png){.main-img-right}'
+  - "Allow students to show off their R skills and communication ability while investigating data that is meaningful to them!"
+  - '<img src = "img/main_image.png" class = "main_pic" width = "400px">'
+logoleft_name: '![](img/frame.png){.main-img-left}'
+logoright_name: '![](img/stat-logo-red.png){.main-img-right}'
 main_width: 0.5026455
 output: 
   posterdown::posterdown_betterland:
@@ -29,82 +29,78 @@ bibliography: packages.bib
 ---
 
 ```{r, include=FALSE}
-#remotes::install_github("mitchelloharawild/icons")
-#knit: pagedown::chrome_print
-library(icons)
 knitr::opts_chunk$set(results = 'asis',
                       echo = FALSE,
                       warning = FALSE,
                       tidy = FALSE,
                       message = FALSE,
                       fig.align = 'center',
-                      out.width = "100%")
+                      out.width = "100%",
+                      cache = TRUE)
 options(knitr.table.format = "html") 
 ```
 
+# Purpose & Goals
 
-# Purpose
+Creating meaningful projects in a data science course can be a time consuming task!  With the given example project instructions students:  
 
-Creating meaningful projects in a data science course can be a time consuming task. The purpose of this beyond session is to provide example project instructions from a graduate level introductory data science course using the tidyverse that could be used to create a similar assessment for your class along with example student submissions. The purpose of the project is to give students practice writing coherent R functions to query an API (think online database), return the data in a usable format, and summarize the data in a meaningful way. The project discussed here requires the topics of: R Markdown, Function Writing, Data Manipulation, and Summarizing Data. Students should be familiar with the common steps of conducting an exploratory data analysis in R.
+- must **conceptualize how R data is stored and how to manipulate it** into a useful form
+- must be able to **write custom R functions** meant for another user
+- may seek out and **find a data source meaningful to them**
+- are forced to **think about the type(s) of data** they are downloading and **how they can be summarized** to meet the Exploratory Data Analysis (EDA) requirements
+- **use good programming practices** in a larger project setting
+- **communicate their code and results** 
+- (advanced version) create a sleek website to show off their work through RMarkdown and github pages
+
 
 # Project Requirements
 
-- `r knitr::include_graphics("https://raw.githubusercontent.com/rstudio/hex-stickers/main/SVG/rmarkdown.svg",)`
-- `r icon_style(icons::academicons("osf"), scale = 2, fill = "#035AA6")`
-- `r icons::fontawesome("github")` (optional) 
-This is the `posterdown_betterland` template for the {posterdown} package! I was inspired by the twitter thread of [Mike Morrison](https://mobile.twitter.com/mikemorrison/status/1110191245035479041) and wanted to apply the `#betterposter` concept to the reproducible (yet simple to use) functionality of the {posterdown} package [@R-posterdown]. If you're not an R user don't sweat as you do **NOT** need to use it at all! Feel free to use only the Markdown functionality of this package :)
+- <img src = "img/RStudio.svg" width = "80px" style = "float: left;"> `R` & `RStudio` <br><br>
+- <img src = "img/rmarkdown.svg" width = "80px" style= "float: left;"> `RMarkdown` to easily create an HTML document with code & output embedded
+- <img src = "img/dplyr.svg" width = "80px" style = "float: left;"> `dplyr` (or Base R) for common data manipulation tasks <br>
+- <img src = "img/ggplot2.svg" width = "80px" style = "float: left;"> `ggplot2` (or Base R) for summarizing the data<br><br>
+- <img src = "img/r.jpg" width = "80px" style = "float: left;"> Ability to write custom `R` functions<br><br>
+- <img src = "img/github.png" width = "80px" style = "float: left;"> `Github` (optional) - for easy creation of a web site to share their work<br>
+- Basic lesson on APIs and handling JSON data
 
-```{r, include=FALSE}
-knitr::write_bib(c('posterdown', 'rmarkdown','pagedown'), 'packages.bib')
-```
+## Application Program Interfaces (APIs)
 
-## Objectives
+API - think of as a protocol for passing information between computers  
 
-1. Pick a template layout.
-2. Write/ create your poster content distraction free.
-3. Let posterdown do its thing!
+- Build URLs to request specific data: `https://api.polygon.io/v2/aggs/ticker/`<font color="blue">AAPL</font>`/range/1/day/`<font color="blue">2023-01-09</font>/<font color="blue">2023-01-09</font>`?apiKey=*`
+- `httr::GET()` for contacting the API via the URL
+- Process `content` element using `rawToChar()`
+- Use `jsonlite::fromJSON()` to turn results into lists!: 
+    + `httr::GET(URL)$content %>% rawToChar() %>% jsonlite::fromJSON()`
 
+# Project Instructions
 
-**_Now on to the results!_**
+Create a vignette (long form description of how a problem was solved) that provides a narrative for using custom functions to contact an API, parse, and return well-structured data. They then use those functions to obtain data from the API and do some exploratory data analysis.
 
-<br>
+- Vignette written in R Markdown
+- Functions return well-formatted data frames. Requirement:
+    + Query at least five different *end points*
+    + Not the entire API!
+- EDA conducted on resulting data. Requirements:
+    + Contingency tables
+    + Summary statistics (means, sds, etc.) at levels of categorical variables
+    + Bar plot, histogram, box plot, and scatter plot
+- Narrative through document explaining process and results
+- (Optional) Upload to `github` and use *GitHub pages* to render a sleek looking web page
 
-# Results
+# Resources
 
-Here you may have some figures to show off, bellow I have made a scatterplot with the infamous Iris dataset and I can even reference to the figure automatically like this, `Figure \@ref(fig:irisfigure)`, Figure \@ref(fig:irisfigure).
+Material below available at <a href = "go.ncsu.edu/uscots2023" style = "color:blue;">go.ncsu.edu/uscots2023</a> (or use the QR code)  
 
-```{r, irisfigure, fig.cap='Here is a caption for the figure. This can be added by using the "fig.cap" option in the r code chunk options, see this [link](https://yihui.name/knitr/options/#plots) from the legend himself, [Yihui Xie](https://twitter.com/xieyihui).', out.width="80%"}
-par(mar=c(2,2,0,1))
-plot(x = iris$Sepal.Length, y = iris$Sepal.Width,
-     col = iris$Species, pch = 19, xlab = "Sepal Length",
-     ylab = "Sepal Width")
-```
-
-Maybe you want to show off some of that fancy code you spent so much time on to make that figure, well you can do that too! Just use the `echo=TRUE` option in the r code chunk options, Figure \@ref(fig:myprettycode)!
-
-```{r myprettycode, echo=FALSE,collapse=TRUE, fig.cap='Boxplots, so hot right now!', fig.height=3.5, out.width="80%"}
-#trim whitespace
-par(mar=c(2,2,0,0))
-#plot boxplots
-boxplot(iris$Sepal.Width~iris$Species,
-        col = "#008080", 
-        border = "#0b4545",
-        ylab = "Sepal Width (cm)",
-        xlab = "Species")
-```
-
-How about a neat table of data? See, Table \@ref(tab:iristable):
-
-```{r, iristable}
-knitr::kable(
-  iris[1:8,1:5], format = "html",
-  caption = "A table made with the **knitr::kable** function.",
-  align = "c", col.names = c("Sepal <br> Length",
-                             "Sepal <br> Width",
-                             "Petal <br> Length",
-                             "Petal <br> Width",
-                             "Species"),
-  escape = FALSE)
-```
-
-# References
+- Example course notes available (including API querying)
+- Two versions of project instructions 
+    + Basic version with no github
+    + Advanced version that uses github pages to render a web page
+    + Simple point rubric included
+- Example course projects (thank you to these former students!):
+    + <a href = "https://kbelkna.github.io/Project2/" style = "color:blue;">spoonacular API (wine and food)</a>
+    + <a href = "https://rhencher.github.io/ST558-Project2/" style = "color:blue;">College Scorecard API</a>
+    + <a href = "https://bbittne.github.io/Project1/" style = "color:blue;">polygon.io Stock Data API</a>
+    + <a href = "https://github.com/brknapp/Project_1" style = "color:blue;"> Open Movie Database API</a>
+    + <a href = "https://sbgadhwala.github.io/ST558_Project2/" style = "color:blue;"> NASA API</a>
+    + <a href = "https://cmknezev.github.io/ST-558-Project-1/Pokemon-API-Vignette-.html" style = "color:blue;"> Pokemon API</a>
