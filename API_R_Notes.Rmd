@@ -1,0 +1,120 @@
+---
+title: "Connecting to an API with R"
+author: Justin Post
+output: 
+  ioslides_presentation:
+    css: css/style.css
+    widescreen: true
+always_allow_html: true
+transition: faster
+logo: img/logo.png
+---
+
+```{r setup, include=FALSE}
+library(dplyr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Goals
+
+- Understand very basics of APIs 
+
+- Contact an API using R
+
+- Process returned data
+
+## APIs
+
+Application Programming Interfaces (APIs) - a defined method for asking for information from a computer  
+
+- [List of APIs](https://www.programmableweb.com/apis/directory)
+
+- Important for grabbing data, often returned in JSON format
+
+> - Very few packages for contacting APIs are out there for R (as compared to say python) 
+
+> - Can do it yourself using `httr` package!  
+
+
+## Steps to obtain data 
+
+- Install packages needed for contacting APIs and handling data  
+
+    + `httr` and `jsonlite`  
+    
+- (Usually) Obtain a key by registering at the API you want to contact  
+
+- Construct a **URL** to obtain data (using `GET()`)
+
+- Process data using `jsonlite` functions  
+
+
+## Example https://newsapi.org/ 
+
+Registered for a key at [newsapi.org](https://newsapi.org/). An API for looking at news articles  
+
+- Look at documentation for API (most have this!)  
+
+- Example URL to obtain data is given  
+
+`https://newsapi.org/v2/everything?q=bitcoin&apiKey=myKeyGoesHere`
+
+
+## Example https://newsapi.org/ 
+
+- Can add in date for instance:
+
+```{r, fig.align='center', out.width="75%"}
+knitr::include_graphics("img/dates.PNG")
+```
+
+`https://newsapi.org/v2/everything?q=bitcoin&from=2023-05-01&apiKey=myKeyGoesHere`
+
+
+## Using R to Obtain the Data
+
+- Use `GET` from `httr` package (make sure to load package!)  
+
+- Modify for what you have interest in!  
+
+```{r, echo = TRUE, eval = FALSE}
+library(httr)
+GET("http://newsapi.org/v2/everything?qlnTitle=Carolina&from=2023-05-01&language=en&
+    apiKey=myKeyGoesHere")
+```
+
+```{r, echo = FALSE}
+library(httr)
+myData <- GET("http://newsapi.org/v2/everything?qInTitle=Carolina&from=2023-05-01&language=en&pageSize=100&apiKey=aa4b545bfbd64d4bb22ba0cb9f78189c")
+```
+
+## Returned data 
+
+- Usually what you want is stored in something like `content`
+
+```{r, echo = TRUE}
+str(myData, max.level = 1)
+```
+
+## Parse with `jsonlite`
+
+Common steps:
+
+- Grab the list element we want  
+- Convert it to characters with `rawToChar()` 
+- Convert it to a data frame (or list) with `fromJSON` from the `jsonlite` package  
+
+```{r, echo = TRUE, message = FALSE}
+parsed <- myData$content %>% rawToChar() %>% jsonlite::fromJSON()
+str(parsed, max.level = 1)
+```
+
+## Inspecting article info
+
+```{r, echo = TRUE}
+parsed$articles %>% 
+  select(title, description, source, author, everything()) %>%
+  head()
+```
+
+

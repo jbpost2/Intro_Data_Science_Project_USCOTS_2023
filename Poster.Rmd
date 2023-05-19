@@ -25,7 +25,6 @@ output:
     highlight: haddock
     number_sections: false
 link-citations: true
-bibliography: packages.bib
 ---
 
 ```{r, include=FALSE}
@@ -89,17 +88,18 @@ Create a vignette (long form description of how a problem was solved) that provi
 
 # Resources
 
-Material below available at <a href = "go.ncsu.edu/uscots2023" style = "color:blue;">go.ncsu.edu/uscots2023</a> (or use the QR code)
+Material below available at <a href = "http://go.ncsu.edu/uscots2023" style = "color:blue;">go.ncsu.edu/uscots2023</a> (or use the QR code)
 
--   Example course notes available (including API querying)
--   Two versions of project instructions
+- Example notes for querying an API
+- Two versions of project instructions
     -   Basic version with no github
     -   Advanced version that uses github pages to render a web page
     -   Simple point rubric included
--   Example course projects (thank you to these former students!):
+- Example course projects (thank you to these former students!):
     -   <a href = "https://kbelkna.github.io/Project2/" style = "color:blue;">spoonacular API (wine and food)</a>
     -   <a href = "https://rhencher.github.io/ST558-Project2/" style = "color:blue;">College Scorecard API</a>
     -   <a href = "https://bbittne.github.io/Project1/" style = "color:blue;">polygon.io Stock Data API</a>
     -   <a href = "https://github.com/brknapp/Project_1" style = "color:blue;"> Open Movie Database API</a>
     -   <a href = "https://sbgadhwala.github.io/ST558_Project2/" style = "color:blue;"> NASA API</a>
     -   <a href = "https://cmknezev.github.io/ST-558-Project-1/Pokemon-API-Vignette-.html" style = "color:blue;"> Pokemon API</a>
+- <a href = "https://jbpost2.github.io/pages/R.html"  style = "color:blue;">Basics of R Open Course</a>
