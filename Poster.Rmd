@@ -13,8 +13,8 @@ poster_width: "47.25in"
 secondary_colour: "#F2F2F2"
 primary_colour: "#CC0000"
 main_findings:
-  - "Allow students to show off their R skills and communication ability while investigating data that is meaningful to them!"
-  - '<img src = "img/main_image.png" class = "main_pic" width = "400px">'
+  - "<span style = 'font-family: monospace; font-size: 140px;'>Allow students to show off their R skills and communication ability while investigating data that is meaningful to them!</span>"
+  - '<img src = "img/main_image.png" class = "main_pic" style = "width: 70%">'
 logoleft_name: '![](img/frame.png){.main-img-left}'
 logoright_name: '![](img/stat-logo-red.png){.main-img-right}'
 main_width: 0.5026455
@@ -42,65 +42,64 @@ options(knitr.table.format = "html")
 
 # Purpose & Goals
 
-Creating meaningful projects in a data science course can be a time consuming task!  With the given example project instructions students:  
+Creating meaningful projects in a data science course can be a time consuming task! With the given example project instructions students:
 
-- must **conceptualize how R data is stored and how to manipulate it** into a useful form
-- must be able to **write custom R functions** meant for another user
-- may seek out and **find a data source meaningful to them**
-- are forced to **think about the type(s) of data** they are downloading and **how they can be summarized** to meet the Exploratory Data Analysis (EDA) requirements
-- **use good programming practices** in a larger project setting
-- **communicate their code and results** 
-- (advanced version) create a sleek website to show off their work through RMarkdown and github pages
-
+-   must **conceptualize how R data is stored and how to manipulate it** into a useful form
+-   must be able to **write custom R functions** meant for another user
+-   may seek out and **find a data source meaningful to them**
+-   are forced to **think about the type(s) of data** they are downloading and **how they can be summarized** to meet the Exploratory Data Analysis (EDA) requirements
+-   **use good programming practices** in a larger project setting
+-   **communicate their code and results**
+-   (advanced version) create a sleek website to show off their work through RMarkdown and github pages
 
 # Project Requirements
 
-- <img src = "img/RStudio.svg" width = "80px" style = "float: left;"> `R` & `RStudio` <br><br>
-- <img src = "img/rmarkdown.svg" width = "80px" style= "float: left;"> `RMarkdown` to easily create an HTML document with code & output embedded
-- <img src = "img/dplyr.svg" width = "80px" style = "float: left;"> `dplyr` (or Base R) for common data manipulation tasks <br>
-- <img src = "img/ggplot2.svg" width = "80px" style = "float: left;"> `ggplot2` (or Base R) for summarizing the data<br><br>
-- <img src = "img/r.jpg" width = "80px" style = "float: left;"> Ability to write custom `R` functions<br><br>
-- <img src = "img/github.png" width = "80px" style = "float: left;"> `Github` (optional) - for easy creation of a web site to share their work<br>
-- Basic lesson on APIs and handling JSON data
+-   <img src="img/RStudio.svg" width="80px" style="float: left;"/> `R` & `RStudio` <br><br>
+-   <img src="img/rmarkdown.svg" width="80px" style="float: left;"/> `RMarkdown` to easily create an HTML document with code & output embedded
+-   <img src="img/dplyr.svg" width="80px" style="float: left;"/> `dplyr` (or Base R) for common data manipulation tasks <br>
+-   <img src="img/ggplot2.svg" width="80px" style="float: left;"/> `ggplot2` (or Base R) for summarizing the data<br><br>
+-   <img src="img/r.jpg" width="80px" style="float: left;"/> Ability to write custom `R` functions<br><br>
+-   <img src="img/github.png" width="80px" style="float: left;"/> `Github` (optional) - for easy creation of a web site to share their work<br>
+-   Basic lesson on APIs and handling JSON data
 
 ## Application Program Interfaces (APIs)
 
-API - think of as a protocol for passing information between computers  
+API - think of as a protocol for passing information between computers
 
-- Build URLs to request specific data: `https://api.polygon.io/v2/aggs/ticker/`<font color="blue">AAPL</font>`/range/1/day/`<font color="blue">2023-01-09</font>/<font color="blue">2023-01-09</font>`?apiKey=*`
-- `httr::GET()` for contacting the API via the URL
-- Process `content` element using `rawToChar()`
-- Use `jsonlite::fromJSON()` to turn results into lists!: 
-    + `httr::GET(URL)$content %>% rawToChar() %>% jsonlite::fromJSON()`
+-   Build URLs to request specific data: `https://api.polygon.io/v2/aggs/ticker/`<font color="blue">AAPL</font>`/range/1/day/`<font color="blue">2023-01-09</font>/<font color="blue">2023-01-09</font>`?apiKey=*`
+-   `httr::GET()` for contacting the API via the URL
+-   Process `content` element using `rawToChar()`
+-   Use `jsonlite::fromJSON()` to turn results into lists!:
+    -   `httr::GET(URL)$content %>% rawToChar() %>% jsonlite::fromJSON()`
 
 # Project Instructions
 
 Create a vignette (long form description of how a problem was solved) that provides a narrative for using custom functions to contact an API, parse, and return well-structured data. They then use those functions to obtain data from the API and do some exploratory data analysis.
 
-- Vignette written in R Markdown
-- Functions return well-formatted data frames. Requirement:
-    + Query at least five different *end points*
-    + Not the entire API!
-- EDA conducted on resulting data. Requirements:
-    + Contingency tables
-    + Summary statistics (means, sds, etc.) at levels of categorical variables
-    + Bar plot, histogram, box plot, and scatter plot
-- Narrative through document explaining process and results
-- (Optional) Upload to `github` and use *GitHub pages* to render a sleek looking web page
+-   Vignette written in R Markdown
+-   Functions return well-formatted data frames. Requirement:
+    -   Query at least five different *end points*
+    -   Not the entire API!
+-   EDA conducted on resulting data. Requirements:
+    -   Contingency tables
+    -   Summary statistics (means, sds, etc.) at levels of categorical variables
+    -   Bar plot, histogram, box plot, and scatter plot
+-   Narrative through document explaining process and results
+-   (Optional) Upload to `github` and use *GitHub pages* to render a sleek looking web page
 
 # Resources
 
-Material below available at <a href = "go.ncsu.edu/uscots2023" style = "color:blue;">go.ncsu.edu/uscots2023</a> (or use the QR code)  
+Material below available at <a href = "go.ncsu.edu/uscots2023" style = "color:blue;">go.ncsu.edu/uscots2023</a> (or use the QR code)
 
-- Example course notes available (including API querying)
-- Two versions of project instructions 
-    + Basic version with no github
-    + Advanced version that uses github pages to render a web page
-    + Simple point rubric included
-- Example course projects (thank you to these former students!):
-    + <a href = "https://kbelkna.github.io/Project2/" style = "color:blue;">spoonacular API (wine and food)</a>
-    + <a href = "https://rhencher.github.io/ST558-Project2/" style = "color:blue;">College Scorecard API</a>
-    + <a href = "https://bbittne.github.io/Project1/" style = "color:blue;">polygon.io Stock Data API</a>
-    + <a href = "https://github.com/brknapp/Project_1" style = "color:blue;"> Open Movie Database API</a>
-    + <a href = "https://sbgadhwala.github.io/ST558_Project2/" style = "color:blue;"> NASA API</a>
-    + <a href = "https://cmknezev.github.io/ST-558-Project-1/Pokemon-API-Vignette-.html" style = "color:blue;"> Pokemon API</a>
+-   Example course notes available (including API querying)
+-   Two versions of project instructions
+    -   Basic version with no github
+    -   Advanced version that uses github pages to render a web page
+    -   Simple point rubric included
+-   Example course projects (thank you to these former students!):
+    -   <a href = "https://kbelkna.github.io/Project2/" style = "color:blue;">spoonacular API (wine and food)</a>
+    -   <a href = "https://rhencher.github.io/ST558-Project2/" style = "color:blue;">College Scorecard API</a>
+    -   <a href = "https://bbittne.github.io/Project1/" style = "color:blue;">polygon.io Stock Data API</a>
+    -   <a href = "https://github.com/brknapp/Project_1" style = "color:blue;"> Open Movie Database API</a>
+    -   <a href = "https://sbgadhwala.github.io/ST558_Project2/" style = "color:blue;"> NASA API</a>
+    -   <a href = "https://cmknezev.github.io/ST-558-Project-1/Pokemon-API-Vignette-.html" style = "color:blue;"> Pokemon API</a>
