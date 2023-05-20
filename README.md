@@ -4,28 +4,28 @@ Creating meaningful projects in a data science course can be a time consuming ta
 
 ## Poster
 
-- [Available here](Poster.html)
+- <a href = "Poster.html" target = "_blank">Available here</a>
 
 ## Project Instructions
 
-- [Version with github included](API_EDA_Project_Github.pdf)
-- [Version without github](API_EDA_Project.pdf)
+- <a href = "API_EDA_Project_Github.pdf" target = "_blank">Version with github included</a>
+- <a href = "API_EDA_Project.pdf" target = "_blank">Version without github</a>
 
 ## Example Projects (thanks to these former students!)
 
-- <a href = "https://kbelkna.github.io/Project2/">spoonacular API (wine and food)</a>
-- <a href = "https://rhencher.github.io/ST558-Project2/">College Scorecard API</a>
-- <a href = "https://bbittne.github.io/Project1/" >polygon.io Stock Data API</a>
-- <a href = "https://github.com/brknapp/Project_1"> Open Movie Database API</a>
-- <a href = "https://sbgadhwala.github.io/ST558_Project2/"> NASA API</a>
-- <a href = "https://cmknezev.github.io/ST-558-Project-1/Pokemon-API-Vignette-.html"> Pokemon API</a>
+- <a href = "https://kbelkna.github.io/Project2/" target = "_blank">spoonacular API (wine and food)</a>
+- <a href = "https://rhencher.github.io/ST558-Project2/" target = "_blank">College Scorecard API</a>
+- <a href = "https://bbittne.github.io/Project1/" target = "_blank">polygon.io Stock Data API</a>
+- <a href = "https://github.com/brknapp/Project_1" target = "_blank"> Open Movie Database API</a>
+- <a href = "https://sbgadhwala.github.io/ST558_Project2/" target = "_blank"> NASA API</a>
+- <a href = "https://cmknezev.github.io/ST-558-Project-1/Pokemon-API-Vignette-.html" target = "_blank"> Pokemon API</a>
 
 ## Example Notes for Required Material
 
-- [Basics of R course](https://jbpost2.github.io/pages/R.html)
-- [APIs & R Notes](API_R_Notes.html)
+- <a href = "https://jbpost2.github.io/pages/R.html" target = "_blank">Basics of R course</a>
+- <a href = "API_R_Notes.html" target = "_blank">APIs & R Notes</a>
 
 ## Repo
 
-- Download all the material using the [Github repo](www.github.com/jbpost2/Intro_Data_Science_Project_USCOTS_2023)
+- Download all the material using the <a href = "https://www.github.com/jbpost2/Intro_Data_Science_Project_USCOTS_2023" target = "_blank">Github repo</a>
 

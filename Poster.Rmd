@@ -49,7 +49,7 @@ Creating meaningful projects in a data science course can be a time consuming ta
 -   are forced to **think about the type(s) of data** they are downloading and **how they can be summarized** to meet the Exploratory Data Analysis (EDA) requirements
 -   **use good programming practices** in a larger project setting
 -   **communicate their code and results**
--   (advanced version) create a sleek website to show off their work through RMarkdown and github pages
+-   (advanced version) create a website to show off their work through RMarkdown and github pages
 
 # Project Requirements
 
@@ -84,7 +84,7 @@ Create a vignette (long form description of how a problem was solved) that provi
     -   Summary statistics (means, sds, etc.) at levels of categorical variables
     -   Bar plot, histogram, box plot, and scatter plot
 -   Narrative through document explaining process and results
--   (Optional) Upload to `github` and use *GitHub pages* to render a sleek looking web page
+-   (Optional) Upload to `github` and use *GitHub pages* to render a web page
 
 # Resources
 
