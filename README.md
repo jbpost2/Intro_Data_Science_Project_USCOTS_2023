@@ -16,14 +16,14 @@ Creating meaningful projects in a data science course can be a time consuming ta
 - <a href = "https://kbelkna.github.io/Project2/" target = "_blank">spoonacular API (wine and food)</a>
 - <a href = "https://rhencher.github.io/ST558-Project2/" target = "_blank">College Scorecard API</a>
 - <a href = "https://bbittne.github.io/Project1/" target = "_blank">polygon.io Stock Data API</a>
-- <a href = "https://github.com/brknapp/Project_1" target = "_blank"> Open Movie Database API</a>
+- <a href = "https://brknapp.github.io/Project_1/" target = "_blank"> Open Movie Database API</a>
 - <a href = "https://sbgadhwala.github.io/ST558_Project2/" target = "_blank"> NASA API</a>
 - <a href = "https://cmknezev.github.io/ST-558-Project-1/Pokemon-API-Vignette-.html" target = "_blank"> Pokemon API</a>
 
 ## Example Notes for Required Material
 
 - <a href = "https://jbpost2.github.io/pages/R.html" target = "_blank">Basics of R course</a>
-- <a href = "API_R_Notes.html" target = "_blank">APIs & R Notes</a>
+- <a href = "API_R_Notes.html" target = "_blank">APIs & R Notes</a> (raw files available at repo link below)
 
 ## Repo
 

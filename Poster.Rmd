@@ -99,7 +99,7 @@ Material below available at <a href = "http://go.ncsu.edu/uscots2023" style = "c
     -   <a href = "https://kbelkna.github.io/Project2/" style = "color:blue;">spoonacular API (wine and food)</a>
     -   <a href = "https://rhencher.github.io/ST558-Project2/" style = "color:blue;">College Scorecard API</a>
     -   <a href = "https://bbittne.github.io/Project1/" style = "color:blue;">polygon.io Stock Data API</a>
-    -   <a href = "https://github.com/brknapp/Project_1" style = "color:blue;"> Open Movie Database API</a>
+    -   <a href = "https://brknapp.github.io/Project_1/" style = "color:blue;"> Open Movie Database API</a>
     -   <a href = "https://sbgadhwala.github.io/ST558_Project2/" style = "color:blue;"> NASA API</a>
     -   <a href = "https://cmknezev.github.io/ST-558-Project-1/Pokemon-API-Vignette-.html" style = "color:blue;"> Pokemon API</a>
 - <a href = "https://jbpost2.github.io/pages/R.html"  style = "color:blue;">Basics of R Open Course</a>
